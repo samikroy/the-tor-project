@@ -1,11 +1,11 @@
 $DownloadCenterURL = "https://check.torproject.org/torbulkexitlist"
 $Response = Invoke-RestMethod -URI $DownloadCenterURL
-$csvFileData = $Response
+$csvFileData = $Response | ConvertTo-Csv
 
 write-host "File Fetch completed."
 
 #decleration
-$file = ".\torips.txt"
+$file = ".\torips.csv"
 $text = $csvFileData
 $wi = "#13 #14"
 
