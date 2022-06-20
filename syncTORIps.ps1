@@ -5,8 +5,8 @@ $csvFileData = $Response
 write-host "File Fetch completed."
 
 #decleration
-$file = ".\torips.csv"
-$text = $csvFileData
+$file = ".\torips.txt"
+#$text = $txtFileData
 $wi = "#13 #14"
 
 "Set config"
@@ -23,7 +23,7 @@ git pull  2>&1 | write-host
 git status 2>&1 | write-host
 
 "Update the file $file"
-Add-Content -Path $file -Value $csvFileData
+Add-Content -Path $file -Value $text
 
 "Status prior to stage"
 git status 2>&1 | write-host
