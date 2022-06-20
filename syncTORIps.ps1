@@ -5,7 +5,7 @@ $csvFileData = $Response.RawContent
 write-host "File Fetch completed."
 
 #decleration
-$file = ".\torips.csv"
+$file = ".\torips.txt"
 $text = $csvFileData
 $wi = "#13 #14"
 
