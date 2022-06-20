@@ -1,6 +1,6 @@
 $DownloadCenterURL = "https://check.torproject.org/torbulkexitlist"
-$Response = Invoke-WebRequest -URI $DownloadCenterURL
-$csvFileData = $Response.RawContent
+$Response = Invoke-RestMethod -URI $DownloadCenterURL
+$csvFileData = $Response
 
 write-host "File Fetch completed."
 
