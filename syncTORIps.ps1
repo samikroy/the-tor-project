@@ -1,12 +1,12 @@
 $DownloadCenterURL = "https://check.torproject.org/torbulkexitlist"
 $Response = Invoke-RestMethod -URI $DownloadCenterURL
-$csvFileData = $Response
+$$txtFileData = $Response
 
 write-host "File Fetch completed."
 
 #decleration
 $file = ".\torips.txt"
-#$text = $txtFileData
+$text = $txtFileData
 $wi = "#13 #14"
 
 "Set config"
@@ -14,7 +14,7 @@ git config --global user.email "builduser@samik.local" # any values will do, if 
 git config --global user.name "Build user"
 
 "Select a branch"
-git checkout main 2>&1 | write-host # need the stderr redirect as some git command line send none error output here and remove this later.
+git checkout main 2>&1 | write-host # need the stderr redirect as some git command line send none error output here
 
 "Update the local repo"
 git pull  2>&1 | write-host
